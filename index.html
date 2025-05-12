@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Reflection Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Intro Screen -->
+    <div id="intro-screen" class="screen active">
+        <div class="card">
+            <h1>Life Reflection Game</h1>
+            <p>A 12-question journey about life struggles, healing, and emotional growth.</p>
+
+            <div class="benefits">
+                <p class="benefits-title">This game:</p>
+                <ul>
+                    <li><span class="check">✅</span> Helps you feel understood</li>
+                    <li><span class="check">✅</span> Shows different perspectives on challenges</li>
+                    <li><span class="check">✅</span> Encourages self-reflection in a gentle way</li>
+                    <li><span class="check">✅</span> Ends with hope and encouragement</li>
+                </ul>
+            </div>
+
+            <button id="start-btn" class="primary-btn">Start Journey</button>
+        </div>
+    </div>
+
+    <!-- Mood Selection Screen -->
+    <div id="mood-screen" class="screen">
+        <div class="card">
+            <h1>How are you feeling today?</h1>
+
+            <div class="mood-grid">
+                <button class="mood-btn" data-mood="happy">
+                    <span class="emoji">😊</span>
+                    <span>Happy/Content</span>
+                </button>
+                <button class="mood-btn" data-mood="sad">
+                    <span class="emoji">😔</span>
+                    <span>Sad/Down</span>
+                </button>
+                <button class="mood-btn" data-mood="neutral">
+                    <span class="emoji">😐</span>
+                    <span>Neutral/Okay</span>
+                </button>
+                <button class="mood-btn" data-mood="stressed">
+                    <span class="emoji">😫</span>
+                    <span>Stressed/Overwhelmed</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" class="screen">
+        <div class="card">
+            <div class="game-header">
+                <div class="lives">
+                    <span class="heart active">❤️</span>
+                    <span class="heart active">❤️</span>
+                    <span class="heart active">❤️</span>
+                    <span class="heart active">❤️</span>
+                    <span class="heart active">❤️</span>
+                </div>
+                <div class="question-counter">Question <span id="current-question">1</span>/12</div>
+            </div>
+
+            <h2 id="question-text">Question text will appear here</h2>
+
+            <div id="options-container" class="options">
+                <!-- Options will be added dynamically -->
+            </div>
+
+            <div class="lifelines">
+                <button id="skip-btn" class="lifeline-btn">
+                    <span class="lifeline-icon">⏭️</span>
+                    <span>Skip (<span id="skips-left">1</span>)</span>
+                </button>
+                <button id="fifty-fifty-btn" class="lifeline-btn">
+                    <span class="lifeline-icon">5️⃣0️⃣</span>
+                    <span>50:50 (<span id="fifty-fifty-left">1</span>)</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="results-screen" class="screen">
+        <div class="card">
+            <h1>Your Journey Results</h1>
+
+            <div class="score-display">
+                <div id="final-score">0/12</div>
+                <p>Questions answered correctly</p>
+            </div>
+
+            <div id="result-message" class="result-message">
+                <!-- Message will be added dynamically -->
+            </div>
+
+            <div class="result-buttons">
+                <button id="share-btn" class="primary-btn">Take Screenshot & Share</button>
+                <button id="play-again-btn" class="secondary-btn">Play Again</button>
+            </div>
+
+            <p class="credit">Created by Lucky</p>
+        </div>
+    </div>
+
+    <!-- Screenshot Container (hidden) -->
+    <div id="screenshot-container" class="screenshot-container">
+        <div class="screenshot-card">
+            <h1>Life Reflection Game</h1>
+            <div class="screenshot-score">
+                <div id="screenshot-score-value">0/12</div>
+                <p>Questions answered correctly</p>
+            </div>
+            <div id="screenshot-message" class="screenshot-message"></div>
+            <p class="screenshot-share">Take a screenshot and share with your friends!</p>
+            <p class="credit">Created by Lucky</p>
+        </div>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="correct-sound" src="correct.mp3" preload="auto"></audio>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
